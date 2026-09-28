@@ -1,0 +1,71 @@
+{
+  "machine_name": "Rotore Elettromagnetico Toroidale a 12 Anelli e 24 Bobine con Gabbia Sferica in Alluminio",
+  "project": "Dimensionamento e Simulazione Elettromagnetica Multi-Fisica",
+  "rotor_geometry": {
+    "num_rings": 12,
+    "num_coils": 24,
+    "coils_per_ring": 2,
+    "ring_major_radius_mm": 35.0,
+    "ring_tube_radius_mm": 4.0,
+    "ring_outer_diameter_mm": 78.0,
+    "rotor_rotation_axis": "Z-axis [0, 0, 1]",
+    "hole_axes_plane": "XY-plane (perpendicular to Z-axis)",
+    "angular_ring_spacing_deg": 15.0,
+    "angular_coil_spacing_deg": 15.0,
+    "ring_meridian_angles_deg": [0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165],
+    "intersection_region": "Polar crowns (Z > 0 and Z < 0, latitude |lat| > 75 deg)",
+    "free_arc_subtended_angle_deg": 150.0,
+    "free_arc_length_mm": 91.63,
+    "rotor_core_material": "PEEK amagnetico dielettrico (mu_r = 1.0, sigma = 0 S/m)"
+  },
+  "coil_specifications": {
+    "winding_type": "Multi-layer toroidal saddle winding wound across the free arc",
+    "wire_type": "Enameled Copper Wire (AWG 24)",
+    "wire_conductor_diameter_mm": 0.51,
+    "wire_insulated_diameter_mm": 0.56,
+    "conductor_cross_section_mm2": 0.204,
+    "number_of_layers": 3,
+    "turns_per_layer": 40,
+    "total_turns_per_coil": 120,
+    "mean_turn_length_mm": 30.16,
+    "total_wire_length_per_coil_m": 3.62,
+    "copper_resistivity_ohm_m": 1.72e-8,
+    "single_coil_dc_resistance_ohm": 0.305,
+    "single_coil_inductance_uH": 14.2,
+    "total_coils_copper_mass_kg": 0.158
+  },
+  "electrical_excitation": {
+    "source_type": "Single-phase AC voltage/current",
+    "nominal_frequency_hz": 100.0,
+    "angular_frequency_rad_s": 628.318,
+    "peak_current_A": 3.0,
+    "rms_current_per_halfwave_A": 1.5,
+    "rectification_scheme": "Half-wave diode rectification with alternating PN / NP polarity",
+    "even_coils_rectification": "PN diode (conducts on positive half-wave, 0 <= omega*t < pi) -> North (N)",
+    "odd_coils_rectification": "NP diode antiparallel (conducts on negative half-wave, pi <= omega*t < 2*pi) -> South (S)",
+    "adjacent_coils_phase_shift_deg": 180.0,
+    "peak_ampere_turns_per_coil_At": 360.0
+  },
+  "air_gap_and_cage": {
+    "rotor_bounding_radius_mm": 39.0,
+    "air_gap_radial_thickness_mm": 2.0,
+    "spherical_cage_inner_radius_mm": 41.0,
+    "spherical_cage_thickness_mm": 2.0,
+    "spherical_cage_outer_radius_mm": 43.0,
+    "cage_material": "Aluminum alloy woven mesh / shell",
+    "aluminum_bulk_conductivity_S_m": 3.5e7,
+    "mesh_effective_conductivity_S_m": 1.75e7,
+    "cage_relative_permeability": 1.0,
+    "skin_depth_at_100hz_mm": 12.04,
+    "outer_measurement_sphere_radius_mm": 60.0
+  },
+  "kinematics": {
+    "nominal_rotation_speed_rpm": 1200.0,
+    "mechanical_angular_velocity_rad_s": 125.664,
+    "tested_states": [
+      { "state": "STATIC", "omega_rpm": 0.0, "description": "Rotor stationary" },
+      { "state": "CW", "omega_rpm": 1200.0, "description": "Clockwise rotation (+Z torque / -Z angular velocity)" },
+      { "state": "CCW", "omega_rpm": -1200.0, "description": "Counter-Clockwise rotation (-Z torque / +Z angular velocity)" }
+    ]
+  }
+}

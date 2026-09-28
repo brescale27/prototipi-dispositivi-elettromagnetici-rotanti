@@ -27,4 +27,6 @@ work_dirs_power_scaling/
 work_dirs*/
 **/work_dirs*/
 *.vtu
-
+# Heavy FEM build and test directories
+future_fem_model/
+**/future_fem_model/
