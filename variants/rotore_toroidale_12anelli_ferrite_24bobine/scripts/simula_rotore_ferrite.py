@@ -402,16 +402,10 @@ def run_laboratory_experiment_simulation():
     ax4.legend(loc='lower right', fontsize=8.5)
     
     plt.tight_layout()
-    fig_out = FIG_DIR / "fig_06_evidenza_reale_bussola_magnetometro_cw_ccw.png"
+    fig_out = FIG_DIR / "03_campo_magnetico_rotazione_cw_ccw.png"
     plt.savefig(fig_out, dpi=300)
     plt.close()
     print(f"[OK] Grafico salvato: {fig_out}")
-    
-    # Copia negli artifacts
-    art_path = Path("C:/Users/bresc/.gemini/antigravity/brain/40e990f6-cb19-4a94-bd85-3cd6f34066ca/fig_06_evidenza_reale_bussola_magnetometro_cw_ccw.png")
-    import shutil
-    shutil.copy(fig_out, art_path)
-    print(f"[OK] Copiato in artifact: {art_path}")
     
     # Salvataggio dati JSON
     res_data = {
@@ -424,9 +418,9 @@ def run_laboratory_experiment_simulation():
         'cw_positive_fraction_pct': float(100.0 * np.sum(B_rad_cw > 0) / n_az),
         'ccw_negative_fraction_pct': float(100.0 * np.sum(B_rad_ccw < 0) / n_az)
     }
-    with open(DATA_DIR / "risultati_bussola_magnetometro_reale.json", "w", encoding="utf-8") as f:
+    with open(DATA_DIR / "dati_misura_campo_rotazione.json", "w", encoding="utf-8") as f:
         json.dump(res_data, f, indent=2)
-    print(f"[OK] Dati salvati in: {DATA_DIR / 'risultati_bussola_magnetometro_reale.json'}")
+    print(f"[OK] Dati salvati in: {DATA_DIR / 'dati_misura_campo_rotazione.json'}")
 
 if __name__ == "__main__":
     run_laboratory_experiment_simulation()

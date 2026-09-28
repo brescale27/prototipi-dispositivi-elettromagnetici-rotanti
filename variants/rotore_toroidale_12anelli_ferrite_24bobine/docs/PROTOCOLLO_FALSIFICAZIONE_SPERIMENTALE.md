@@ -1,6 +1,6 @@
 # Protocollo di Falsificazione e Validazione Sperimentale da Banco
 
-**Progetto:** Open Chiral Flux Shaper — Rotore a 12 Anelli in Ferrite e 24 Bobine Toroidali  
+**Progetto:** Rotore Elettromeccanico Toroidale a 12 Anelli in Ferrite e 24 Bobine Toroidali  
 **Licenza:** CERN Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S-2.0)  
 **Autore:** Alessandro Brescacin  
 
