@@ -18,6 +18,7 @@ that the physical interpretation or the real machine has been validated.
 | Lorentz-force chirality is physically established | Falsification test fails symmetry; Lorentz/MST comparison differs strongly | `verification_tests/data/`, `data/validazione_mst_chiral_bias.json` | `ARTIFACT` | Force and torque interpretation requires a new controlled model. |
 | Power is invariant at 18.5 W in every campaign | Some analytic datasets impose or report this value; other datasets contain different totals | `data/*.json`, variant scripts | `NEEDS_REVIEW` | Must be checked from direct FEM energy balances per case. |
 | Laboratory field validation exists | README contains a proposed scanner and acceptance protocol | `README.md` historical version / current roadmap | `NOT_IMPLEMENTED` | No laboratory measurement dataset is included. |
+| New 12-ring/24-coil variant proves direction-dependent ±4.34 µT or a unipolar spherical field | Python ablation removes the entire reported ring-average signal when its prescribed cage dipole is removed; full-sphere sample has both radial signs | `variants/rotore_toroidale_12anelli_ferrite_24bobine/docs/AUDIT_ABLAZIONE_2026-09-29.md` | `NOT_VERIFIED` | These numbers are analytical script outputs, not attributable FEM output or documented laboratory measurements. |
 
 ## Interpretation rule
 
